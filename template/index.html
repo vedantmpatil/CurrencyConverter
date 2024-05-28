@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SBVS CURRENCY CONVERTER</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    body{
+        background: url("https://wallpaperaccess.com/full/2223129.jpg") no-repeat fixed ;
+        background-size: cover;
+        color: white;
+    }
+    .box{
+         /* border: 2px solid red; */
+         text-align: center;
+         margin: 100px;
+    }
+    #select1{
+        padding: 10px;
+        width: 170px;
+        text-align: center;
+        height: 10px 10px;
+        font-size: medium;
+        border-radius: 60%;
+        font-family:  'Yeseva One', cursive;
+;
+    }
+    #select2{
+        padding: 10px;
+        width: 170px;
+        text-align: center;
+        height: 10px 10px;
+        font-size: medium;
+        border-radius: 60%;
+        font-family:  'Yeseva One', cursive;
+    }
+    #h2{
+        /* border: 2px solid rgb(191, 255, 0); */
+        text-align: center;
+    }
+    #ele1{
+        padding: 10px;
+        width: 264px;
+        text-align: center;
+        height: 10px 10px;
+        font-size: medium;
+        margin: 24px 10px 16px 20px;
+        border-radius: 30px;
+        font-family:  'Yeseva One', cursive;
+    }
+    #convert{
+        padding: 10px;
+        width: 140px;
+        text-align: center;
+        height: 10px 10px;
+        font-size: medium;
+        margin: 10px 10px 16px 20px;
+        border-radius: 30px;
+        font-family:  'Yeseva One', cursive;
+    }
+    #convert:hover{
+        scale: 1.2;
+        background-color: rgba(0, 235, 0, 0.73);
+    }
+    h3{
+        color: rgb(0, 0, 0);
+        font-family:'Yeseva One', cursive;
+        /* background:  linear-gradient( rgba(35, 236, 4, 0.6) 0px, rgba(35, 236, 4, 0.6) 100%) repeat 0 0; */
+        /* margin: 10px 652px 10px 645px; */
+        font-size: small;
+    }
+    #select1:hover{
+        scale: 1.1;
+    }
+    #select2:hover{
+        scale: 1.1;
+    }
+    #container{
+        background:  linear-gradient( rgba(35, 236, 4, 0.6) 0px, rgba(35, 236, 4, 0.6) 100%) repeat 0 0;
+        color: black;
+        /* margin: 10px 413px 10px 407px; */
+        /* border-radius: 12%; */
+    }
+    #container:hover{
+        scale: 1.1;
+    }
+</style>
+<body>
+    <h2 id="h2">CURRENCY CONVERTER<h2>
+    <!-- Buttons down -->
+    <div class="box">
+
+        <select class="form-select" id="select1" aria-label="Default select example">
+            <option value="1">INR</option>
+            <option value="2">USD</option>
+            <option value="3">EUR</option>
+            <option value="4">AUD</option>
+            <option value="5">IDR</option>
+            <option value="6">MYR</option>
+        </select>
+          <h3>To</h3>
+        <select class="form-select" id="select2" aria-label="Default select example">
+            <option value="2">USD</option>
+            <option value="3">EUR</option>
+            <option value="4">AUD</option>
+            <option value="5">IDR</option>
+            <option value="6">MYR</option>
+            <option value="1">INR</option>
+
+        </select>
+        <br>
+        <label for="ele1"></label>
+        <input id="ele1" placeholder="AMOUNT" type="number">
+        <br>
+        <button id="convert" onclick="converter()" type="submit">CONVERT</button>
+    
+    <!-- Buttons up  -->
+    <!-- Container down -->
+    <div id="container">
+        
+        <span class="badge rounded-pill text-bg-success">"Money talks, wealth whispers."</span>
+        
+    </div>
+    
+    <!-- Container up -->
+</div>
+</body>
+<script>
+
+    //   let inr = document.getElementById("inr").value;       
+    //   let usd = document.getElementById("usd").value;  
+
+
+    //   Note here select will choose option by its VALUE   
+    function converter() {
+        let select1 = document.getElementById("select1").value;
+        let select2 = document.getElementById("select2").value;
+        // To know whats selected 
+        console.log(select1, select2)
+        // INR TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // INR TO INR 
+        if (select1.value == 1 && select2.value == 1) {
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // INR TO USD 
+        else if (select1 == 1 && select2 == 2) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.012;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // INR TO EUR
+        else if (select1 == 1 && select2 == 3) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.011;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // INR TO AUD 
+        else if (select1 == 1 && select2 == 4) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.019;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // INR TO IDR 
+        else if (select1 == 1 && select2 == 5) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 185.04;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // INR TO MYR 
+        else if (select1 == 1 && select2 == 6) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.056;
+            let container = document.getElementById("container")
+            container.innerHTML = `HI ${result}, ele : ${amount}`
+        }
+        // INR TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+        // USD TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // USD TO USD 
+        if (select1 == 2 && select2 == 1) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 83.12;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO INR 
+        else if (select1.value == 2 && select2.value == 2) {
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO EUR
+        else if (select1 == 2 && select2 == 3) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.93;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO AUD 
+        else if (select1 == 2 && select2 == 4) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 1.57;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO IDR 
+        else if (select1 == 2 && select2 == 5) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 15381.70;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO MYR 
+        else if (select1 == 2 && select2 == 6) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 4.68;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // USD TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+        // EUR TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // EUR TO EUR 
+        if (select1 == 3 && select2 == 3) {
+
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO INR 
+        else if (select1.value == 3 && select2.value == 1) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 89.06;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO USD
+        else if (select1 == 3 && select2 == 2) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 1.07;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO AUD 
+        else if (select1 == 3 && select2 == 4) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 1.68;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO IDR 
+        else if (select1 == 3 && select2 == 5) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 16479.18;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO MYR 
+        else if (select1 == 3 && select2 == 6) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 5.01;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // EUR TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+        // AUD TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // AUD TO AUD
+        if (select1 == 4 && select2 == 4) {
+
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // AUD TO INR 
+        else if (select1.value == 4 && select2.value == 1) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 53.07;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // AUD TO USD
+        else if (select1 == 4 && select2 == 2) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.64;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // AUD TO EUR
+        else if (select1 == 4 && select2 == 3) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.60;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  AUD TO  IDR
+        else if (select1 == 4 && select2 == 5) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 9820.29;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  AUD TO MYR 
+        else if (select1 == 4 && select2 == 6) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 2.99;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  AUD TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+        // IDR TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // IDR TO IDR
+        if (select1 == 5 && select2 == 5) {
+
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // IDR TO INR 
+        else if (select1.value == 5 && select2.value == 1) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.0054;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // IDR TO USD
+        else if (select1 == 5 && select2 == 2) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.000065;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // IDR TO EUR
+        else if (select1 == 5 && select2 == 3) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.0000609455;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  IDR TO  AUD
+        else if (select1 == 5 && select2 == 4) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.00010;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  IDR TO MYR 
+        else if (select1 == 5 && select2 == 6) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.00030;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  IDR TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+        // MYR TO >>>>>>>>>>>>>> CONVERSIONS DOWN
+        // MYR TO MYR
+        if (select1 == 6 && select2 == 6) {
+
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // MYR TO INR 
+        else if (select1.value == 6 && select2.value == 1) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 17.78;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // MYR TO USD
+        else if (select1 == 6 && select2 == 2) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.21;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        // MYR TO EUR
+        else if (select1 == 6 && select2 == 3) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.20;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  MYR TO  AUD
+        else if (select1 == 6 && select2 == 4) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 0.33;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  MYR TO IDR 
+        else if (select1 == 6 && select2 == 5) {
+            let amount = document.getElementById("ele1").value;
+            let result = amount * 3289.15;
+            let container = document.getElementById("container")
+            container.innerHTML = `Converted Amount : ${result}, Old Amount : ${amount}`
+        }
+        //  MYR TO >>>>>>>>>>>>>> CONVERSIONS UP
+
+    };
+</script>
+
+</html>
